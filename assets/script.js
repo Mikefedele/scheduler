@@ -1,8 +1,16 @@
 console.log($)
 var inputAreaEl = document.getElementsByClassName(".inputArea");
 var saveButtonEl = document.getElementsByClassName(".saveButton");
+var timeDisplayEl = $("#time-display");
 
+// moment().format('MMMM Do YYYY, h:mm:ss a');
+// console.log (moment());
 
+function displayTime() {
+  var rightNow = moment().format('MMM DD, YYYY [at] hh:mm:ss a');
+  timeDisplayEl.text(rightNow);
+}
+setInterval(displayTime, 1000);
 
 $(".container").on("click",".saveButton", function (event) {
   console.log(event.target);
