@@ -1,6 +1,6 @@
 console.log($)
 var inputAreaEl = document.getElementsByClassName(".inputArea");
-var saveButtonEl = document.getElementsByClassName("saveButton");
+var saveButtonEl = document.getElementsByClassName(".saveButton");
 
 
 
