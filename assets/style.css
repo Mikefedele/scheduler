@@ -21,3 +21,7 @@ main {
 .present {
   background-color: cyan;
 }
+
+.future {
+  background-color: gainsboro;
+}
