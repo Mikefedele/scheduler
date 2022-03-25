@@ -12,3 +12,12 @@
 main {
   margin: 5px;
 }
+
+.past {
+  background-color: darkslategray;
+
+}
+
+.present {
+  background-color: cyan;
+}

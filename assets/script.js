@@ -13,19 +13,54 @@ var h9El = $("#h16");
 var h17 = $("#h17");
 
 
-// moment().format('MMMM Do YYYY, h:mm:ss a');
-// console.log (moment());
 
+// gets time & displays time in header timeDisplay
 function displayTime() {
   var rightNow = moment().format('MMM DD, YYYY [at] hh:mm:ss a');
   timeDisplayEl.text(rightNow);
 }
+// sets interval for the clock to change on screen
 setInterval(displayTime, 1000);
 
+//sets the click event w Jquery the event is sibling to textarea which was the input field
+//stores the input locallly 
 $(".container").on("click",".saveButton", function (event) {
 value = $(this).siblings("textarea").val();
 textString = $(this).siblings(inputAreaEl).text();
 localStorage.setItem(textString, JSON.stringify(value));
+
+})
+
+
+
+var listTimeMoment =moment().format("HH");
+console.log(listTimeMoment);
+
+
+function changeColor() {
+  for (let i = 0; i < inputAreaEl.length; i++) {
+    //have to parseint either my data- or ids to get number then can do the moment math started
+    //that will be timeBlock var, then we can compare
+    var timeBlock = inputAreaEl[i]+ 9;
+    if (listTimeMoment > timeBlock) {
+      $(".form-control").addclass("past")
+    if (timeBlock == listTimeMoment) {
+      $(".form-control").addclass("present")
+    }
+     
+  }
+}}
+
+changeColor();
+
+
+
+
+
+
+
+
+
 
 
 
@@ -48,7 +83,7 @@ localStorage.setItem(textString, JSON.stringify(value));
   // .val().localstorage.setItem()
   // // localStorage.setItem("event.target","siblings.val")
   
-})
+
 
 
 
@@ -77,6 +112,4 @@ localStorage.setItem(textString, JSON.stringify(value));
 
 
 // function getinput() {
-
-// }
 
