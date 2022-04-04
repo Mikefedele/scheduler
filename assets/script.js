@@ -11,6 +11,8 @@ var h14El = $("#h14");
 var h15El = $("#h15");
 var h9El = $("#h16");
 var h17 = $("#h17");
+// var rightnow = moment();
+// var time = rightnow.format('HH');
 
 // gets time & displays time in header timeDisplay
 function displayTime() {
@@ -26,7 +28,11 @@ $(".container").on("click", ".saveButton", function (event) {
   value = $(this).siblings("textarea").val();
   textString = $(this).siblings(inputAreaEl).text();
   localStorage.setItem(textString, JSON.stringify(value));
+  console.log(textString)
 });
+
+
+
 
 var listTimeMoment = moment().format("HH");
 console.log(listTimeMoment);
@@ -58,7 +64,6 @@ changeColor();
 
 // var inputAreaEl = $(this).siblings.text();
 
-// console.log($(this).siblings(inputAreaEl).val());
 // localStorage.setItem($(this).target.siblings.value);
 
 // var value = (event.target)
